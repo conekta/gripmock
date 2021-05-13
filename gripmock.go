@@ -125,6 +125,17 @@ func generateProtoc(param protocParam) {
 		log.Fatal("Fail on protoc ", err)
 	}
 
+	//move all subdirectory files to current directory
+	args = []string{"-c", `find ` + param.output + ` -name '*.go' -exec mv {} ` + param.output + ` \;`}
+	log.Println("args: %v\n", args)
+	mv := exec.Command("sh", args...)
+	mv.Stderr = os.Stderr
+	mv.Stdout = os.Stdout
+	err = mv.Run()
+	if err != nil {
+		log.Fatal("Fail on mv")
+	}
+
 	// change package to "main" on generated code
 	for _, proto := range param.protoPath {
 		protoname := getProtoName(proto)
