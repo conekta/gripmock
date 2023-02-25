@@ -10,7 +10,7 @@ require (
 	github.com/markbates/pkger v0.17.1
 	github.com/stretchr/testify v1.6.1
 	golang.org/x/net v0.0.0-20201110031124-69a78807bb2b
-	golang.org/x/sys v0.0.0-20201112073958-5cba982894dd // indirect
+	golang.org/x/sys v0.1.0 // indirect
 	golang.org/x/text v0.3.4 // indirect
 	golang.org/x/tools v0.0.0-20201111224557-41a3a589386c
 	google.golang.org/genproto v0.0.0-20201111145450-ac7456db90a6
